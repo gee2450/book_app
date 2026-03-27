@@ -1,0 +1,13 @@
+.bgWrap {
+    min-height: 100dvh;
+    min-width: 100dvw;
+    width: 100%;
+    background: #f6ede3;
+    padding: 14px 0 90px 0;
+    box-sizing: border-box;
+    position: relative;
+    font-family: inherit;
+    margin: 0 auto;
+}
+
+

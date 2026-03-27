@@ -1,0 +1,1 @@
+export { getAnimalIdle } from "./animals";
