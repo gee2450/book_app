@@ -2,6 +2,7 @@ import EmotionIcon from "@/entities/emotion/ui/emotionIcon";
 import type { RecordListItemModel } from "@/entities/record/model/types";
 import { NineSliceBox } from "@/shared";
 import { ui } from "@/assets/images";
+import { formatDisplayDate } from "@/shared/lib/date";
 
 
 export default function RecordListItem({
@@ -37,7 +38,7 @@ export default function RecordListItem({
             "min-w-0 flex flex-col flex-1 self-center",
             item.memo ? "gap-2" : "",
           ].join(" ")}>
-            <div className="font-extrabold text-[22px] leading-none">{item.date}</div>
+            <div className="font-bold text-[20px] leading-none">{formatDisplayDate(item.date)}</div>
             {item.memo ?? (
               <div className="mt-2 text-[16px] text-black/70 line-clamp-1">{item.memo}</div>
             )}

@@ -73,7 +73,7 @@ export default function View({ record }: Props) {
           <TopBanner
             book={record.bookInfo}
             genreSnapshot={record.genreSnapshot}
-            dateText={record.date}
+            date={record.date}
             emotionId={emotionId}
             readOnly={!isEditing}
           />

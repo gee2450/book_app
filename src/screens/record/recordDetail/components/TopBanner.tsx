@@ -1,11 +1,12 @@
 import type { BookInfo, Genre } from "@/entities/book/model/types";
 import type { EmotionId } from "@/entities/emotion/model/types";
 import EmotionIcon from "@/entities/emotion/ui/emotionIcon";
+import { formatDisplayDate } from "@/shared/lib/date";
 
 type TopBannerProps = {
   book: BookInfo;
   genreSnapshot: Genre;
-  dateText: string;
+  date: string;
   emotionId: EmotionId | null | undefined;
   readOnly: boolean;
 };
@@ -13,7 +14,7 @@ type TopBannerProps = {
 export default function TopBanner({
   book,
   genreSnapshot,
-  dateText,
+  date,
   emotionId,
   readOnly,
 }: TopBannerProps) {
@@ -36,7 +37,7 @@ export default function TopBanner({
 
       {/* 날짜 */}
       <div className="flex self-center gap-2">
-        <div className="text-base text-center text-black/70">{dateText}</div>
+        <div className="text-base text-center text-black/70">{formatDisplayDate(date)}</div>
         {readOnly ? <EmotionIcon emotionId={emotionId} /> : null}
       </div>
 

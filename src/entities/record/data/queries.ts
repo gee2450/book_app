@@ -24,12 +24,6 @@ export function useTodayRecordCount(animalId?: string) {
   });
 }
 
-
-function formatDateText(iso: string) {
-  const d = new Date(iso);
-  return `${d.getMonth() + 1}월 ${d.getDate()}일`;
-}
-
 /** ✅ 화면(View)에서 바로 쓰는 조인된 Record 상세 */
 export function useRecordDetail(recordId?: string) {
   return useQuery({
@@ -55,7 +49,7 @@ export function useRecordDetail(recordId?: string) {
         animalInfo: a as unknown as AnimalInfo,
         genreSnapshot: r.genreSnapshot ?? "Unknown",
         stageSnapshot: r.stage ?? 1,
-        date: formatDateText(r.date),
+        date: r.date,
         memo: r.memo ?? undefined,
         emotionId: (r.emotionId ?? 1) as EmotionId,
       };

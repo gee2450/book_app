@@ -2,6 +2,29 @@ import { getAppNow } from "./appDate";
 
 const DAY_MS = 1000 * 60 * 60 * 24;
 
+export function formatDisplayDate(
+  dateStr: string,
+  locale: string = navigator.language
+): string {
+  const d = new Date(dateStr);
+
+  return new Intl.DateTimeFormat(locale, {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }).format(d);
+}
+
+export function formatDate(dateStr: string): string {
+  const d = new Date(dateStr);
+
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
+}
+
 function startOfDay(date: Date): Date {
   const next = new Date(date);
   next.setHours(0, 0, 0, 0);

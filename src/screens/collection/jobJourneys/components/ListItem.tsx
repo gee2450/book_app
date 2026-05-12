@@ -6,6 +6,7 @@ import TravelTag from "./TravelTag";
 import type { Genre } from "@/entities/book/model";
 import type { JourneySummary } from "@/entities/journey/model/types";
 import { ui } from "@/assets/images";
+import { formatDate } from "@/shared/lib/date";
 
 
 type Props = {
@@ -52,9 +53,9 @@ const ListItem: FC<Props> = ({ journey, animalType, genre, index, onClick }) => 
         <div className="h-0 border-b border-[#B7978D]"></div>
 
         <div className="text-sm">
-          {journey.startedAt} ~ { }
+          {formatDate(journey.startedAt)} ~ {" "}
           <span className="whitespace-nowrap">
-            {journey.endedAt}
+            {formatDate(journey.endedAt)}
           </span>
         </div>
 

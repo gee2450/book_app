@@ -5,6 +5,7 @@ import { ANIMAL_JOB_APPEARANCE } from "@/entities/animal/model/jobAppearance";
 import { OneLine, BookList, BookListItem } from "./components";
 import { useJourney } from "@/entities/journey/data/queries";
 import { ui } from "@/assets/images";
+import { formatDate } from "@/shared/lib/date";
 
 
 const Screen = () => {
@@ -41,7 +42,7 @@ const Screen = () => {
               <span>{journey.animalInfo.name}</span>
               <img alt="divider_right" src={ui('divider_half.png')} className="w-10 pointer-events-none scale-x-[-1]" />
             </div>
-            <span>{journey.startedAt} ~ {journey.endedAt}</span>
+            <span>{formatDate(journey.startedAt)} ~ {formatDate(journey.endedAt)}</span>
           </div>
           <img
             src={imgUrl}

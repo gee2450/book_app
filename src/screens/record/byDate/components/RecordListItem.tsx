@@ -2,6 +2,7 @@ import NineSliceBox from "@/shared/NineSliceBox";
 import EmotionIcon from "@/entities/emotion/ui/emotionIcon";
 import type { RecordListItemModel } from "@/entities/record/model/types";
 import { ui } from "@/assets/images";
+import { formatDisplayDate } from "@/shared/lib/date";
 
 
 type Props = {
@@ -38,7 +39,7 @@ export default function RecordListItem({
 
             <div className="mt-1 flex items-center justify-between text-sm text-black/60">
               <span className="truncate">{item.bookInfo.genre}</span>
-              <span className="shrink-0">{item.date}</span>
+              <span className="shrink-0">{formatDisplayDate(item.date)}</span>
             </div>
 
             {/* 메모 미리보기 */}

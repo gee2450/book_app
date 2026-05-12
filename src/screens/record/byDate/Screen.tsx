@@ -13,6 +13,7 @@ export default function Screen() {
     <View
       onBack={() => navigate(-1)}
       items={items}
+      scope={location.state?.scope || "allJourney"}
       isLoading={isLoading}
       hasMore={hasMore}
       loadMore={loadMore}

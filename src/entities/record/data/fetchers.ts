@@ -34,12 +34,6 @@ export async function fetchTodayRecordCount(animalId: string): Promise<number> {
     .count();
 }
 
-
-function formatDateText(iso: string) {
-  const d = new Date(iso);
-  return `${d.getMonth() + 1}월 ${d.getDate()}일`;
-}
-
 export async function fetchRecordListPage(params: {
   animalId: string | null;
   bookId?: string | null; 
@@ -157,7 +151,7 @@ export async function fetchRecordListPage(params: {
         genreSnapshot: r.genreSnapshot ?? "Unknown",
         stageSnapshot: r.stage ?? 1,
 
-        date: formatDateText(r.date),
+        date: r.date,
         memo: (r.memo ?? "").slice(0, 30),
         emotionId: (r.emotionId ?? 1) as EmotionId,
       };
