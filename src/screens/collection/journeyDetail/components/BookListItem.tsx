@@ -1,5 +1,6 @@
 import { genreLabel, type BookDetailInfo } from "@/entities/book/model";
 import { ui } from "@/assets/images";
+import { useObjectUrl } from "@/shared/lib/useObjectUrl";
 
 
 type Props = {
@@ -7,13 +8,15 @@ type Props = {
 };
 
 const BookListItem = ({ book }: Props) => {
+  const objectUrl = useObjectUrl(book.image);
+
   return (
     <div
       className="flex gap-2 cursor-pointer transition-all py-1"
     >
-      {/* 📚 책 이미지 */}
+      {/* 책 이미지 */}
       <img
-        src={book.image ? book.image : ui('open_book.png')}
+        src={objectUrl ? objectUrl : ui('open_book.png')}
         alt={book.title}
         className="w-10 h-8 object-cover"
       />

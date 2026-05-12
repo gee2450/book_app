@@ -102,7 +102,6 @@ export async function fetchJourneyDetail(animalId: string): Promise<JourneyDetai
       title: book.title,
       author: book.author,
       image: book.img,
-      memo: book.memo,
       updatedAt: book.updatedAt,
 
       genre: r.genre,

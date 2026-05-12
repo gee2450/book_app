@@ -5,6 +5,7 @@ import type { BookInfo } from "@/entities/book/model/types";
 import type { BookListPage } from "../../model/paging";
 import type { RecordListItemModel } from "@/entities/record/model/types";
 import type { RecordListPage } from "@/entities/record/model/paging";
+import type { JourneyDetail } from "@/entities/journey/model/types";
 
 
 /**
@@ -88,6 +89,31 @@ export function useUpdateBook() {
           return old;
         }
       );
-    },
+
+      // 5) journey의 record에서 book join한 정보 patch (최신순 cache)
+      qc.setQueriesData<JourneyDetail>(
+        { queryKey: ["journey"] }, (old) => {
+          if (!old) return old;
+          
+          // old.records에서 bookId가 next.id인 record들만 bookInfo patch
+          const updatedRecords = old.records.map((record) => {
+            if (record.id === next.id) {
+              return { ...record, 
+                title: next.title,
+                author: next.author ?? null,
+                image: next.image ?? null,
+                updatedAt: next.updatedAt,
+              };
+            }
+            return record;
+          });
+
+          return { 
+            ...old, 
+            records: updatedRecords 
+          }
+        }
+      )
+    }
   });
 }
