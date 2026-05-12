@@ -1,5 +1,5 @@
 import React from "react";
-import NineSliceBox from "@shared/NineSliceBox";
+import NineSliceBox from "@/shared/NineSliceBox";
 import { ui } from "@/assets/images";
 
 

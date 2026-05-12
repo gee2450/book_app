@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import type { AnimalInfo } from "@entities/animal/model/types";
+import type { AnimalInfo } from "@/entities/animal/model/types";
 import { ui } from "@/assets/images";
 import { FrameBox } from "@/screens/components";
 

@@ -1,5 +1,5 @@
 import type { ReactNode, ButtonHTMLAttributes } from "react";
-import NineSliceBox from "@shared/NineSliceBox";
+import NineSliceBox from "@/shared/NineSliceBox";
 import { ui } from "@/assets/images";
 
 type ButtonFrameProps = {

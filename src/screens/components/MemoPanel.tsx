@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import TextareaAutosize from "react-textarea-autosize";
-import NineSliceBox from "@shared/NineSliceBox";
+import NineSliceBox from "@/shared/NineSliceBox";
 import { ui } from "@/assets/images";
 
 

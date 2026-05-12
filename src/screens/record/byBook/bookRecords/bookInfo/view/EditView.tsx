@@ -6,7 +6,7 @@ import {
   BookGenreSelect,
   BookAuthorInput,
   CoverField,
-} from "@screens/components";
+} from "@/screens/components";
 
 export default function EditView({
   book,

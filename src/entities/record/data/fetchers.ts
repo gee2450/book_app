@@ -1,4 +1,4 @@
-import type { EmotionId } from "@entities/emotion/model/types";
+import type { EmotionId } from "@/entities/emotion/model/types";
 import { db, type BookRow, type RecordRow } from "@/shared/infra/db/appDb";
 import type { RecordListItemModel } from "@/entities/record/model/types";
 import type { AnimalInfo } from "@/entities/animal/model/types";

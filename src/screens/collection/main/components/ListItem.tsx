@@ -1,4 +1,4 @@
-import NineSliceBox from "@shared/NineSliceBox";
+import NineSliceBox from "@/shared/NineSliceBox";
 import unknownFoxUrl from "@/assets/images/animals/fox/unknown.png";
 import { ui } from "@/assets/images";
 

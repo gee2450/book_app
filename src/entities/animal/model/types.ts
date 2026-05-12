@@ -1,4 +1,4 @@
-import type { Genre } from '@entities/book/model/types';
+import type { Genre } from '@/entities/book/model/types';
 
 export type AnimalType = 'fox';
 export type Stage = 1 | 2 | 3 | 4 | 5;
