@@ -43,7 +43,7 @@ export default function DevModeModal({
               stiffness: 300,
             }}
           >
-            <div className="mx-auto w-full max-w-md overflow-hidden rounded-t-3xl rounded-b-2xl border border-[#C9ACA1] bg-[#F4E3DB] shadow-xl">
+            <div className="mx-auto w-full overflow-hidden rounded-t-3xl rounded-b-2xl border border-[#C9ACA1] bg-[#F4E3DB] shadow-xl">
               {/* 핸들 */}
               <div className="flex justify-center py-3">
                 <div className="h-1.5 w-12 rounded-full bg-[#C9ACA1]" />
