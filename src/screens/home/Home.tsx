@@ -2,7 +2,13 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useQueryClient } from "@tanstack/react-query";
 
-import { HomeMenu, PromptText, TestDateBar, HomeStatsCard } from "./components";
+import {
+  HomeMenu,
+  PromptText,
+  HomeStatsCard,
+  DevModeModal,
+} from "./components";
+
 import { AnimalPanel, DeviceFrame, FeedButton } from "../components";
 
 import { useCurrentAnimal } from "@/entities/animal/data/queries";
@@ -23,9 +29,12 @@ const HomeScreen = () => {
   const qc = useQueryClient();
 
   const [testDateLabel, setTestDateLabel] = useState(getAppDateLabel());
+  const [devModeOpen, setDevModeOpen] = useState(false);
 
   const { data: currentAnimal } = useCurrentAnimal();
-  const { data: todayRecordCount = 0 } = useTodayRecordCount(currentAnimal?.id);
+  const { data: todayRecordCount = 0 } = useTodayRecordCount(
+    currentAnimal?.id,
+  );
 
   useEffect(() => {
     if (currentAnimal?.isCompleted) {
@@ -54,14 +63,12 @@ const HomeScreen = () => {
   const handleTestGrowth = async () => {
     if (!currentAnimal) return;
 
-    // stage 5일 때는 Ending으로 이동
     if (currentAnimal.stage === 5) {
       navigate("/ending");
       return;
     }
 
     const nextStage = (currentAnimal.stage + 1) as Stage;
-    const nextFavoriteGenre = currentAnimal.stage === 3 ? "SF" : currentAnimal.favoriteGenre;
 
     navigate("/growth", {
       state: {
@@ -69,10 +76,11 @@ const HomeScreen = () => {
         nextAnimal: {
           ...currentAnimal,
           stage: nextStage,
-          favoriteGenre: nextFavoriteGenre,
         },
       },
     });
+
+    setDevModeOpen(false);
   };
 
   const handleTestAddFeedCnt = async () => {
@@ -84,23 +92,13 @@ const HomeScreen = () => {
       feedCnt: newFeedCnt,
     });
 
-    // UI 업데이트
     await qc.invalidateQueries({
       queryKey: animalKeys.current(),
     });
   };
 
   return (
-    <DeviceFrame>
-      {import.meta.env.DEV && (
-        <TestDateBar
-          label={testDateLabel}
-          onNextDay={goNextDay}
-          onTestGrowth={handleTestGrowth}
-          onTestAddFeedCnt={handleTestAddFeedCnt}
-        />
-      )}
-
+    <DeviceFrame onDevModeClick={() => setDevModeOpen(true)}>
       <AnimalPanel animal={currentAnimal} />
       <PromptText animal={currentAnimal} />
 
@@ -117,6 +115,15 @@ const HomeScreen = () => {
       <HomeMenu
         onRecordClick={() => navigate("/record")}
         onCollectionClick={() => navigate("/collection")}
+      />
+
+      <DevModeModal
+        open={devModeOpen}
+        label={testDateLabel}
+        onClose={() => setDevModeOpen(false)}
+        onNextDay={goNextDay}
+        onTestGrowth={handleTestGrowth}
+        onTestAddFeedCnt={handleTestAddFeedCnt}
       />
     </DeviceFrame>
   );
