@@ -22,7 +22,7 @@ export async function feedAnimal(
 
   return db.transaction(
     "rw",
-    [db.current_animal, db.animals, db.books, db.records, db.book_genre_record_cnt, db.journeys],
+    [db.current_animal, db.animals, db.books, db.records, db.book_genre_record_cnt],
     async () => {
       const current = await getCurrentAnimalRow();
       const animal = await getCurrentAnimalInfo(current.animalId);
@@ -82,23 +82,6 @@ export async function feedAnimal(
       };
 
       await db.current_animal.put(nextCurrentRow);
-
-      // Journey 자동 생성 (feedCnt >= 100일 때)
-      if (isCompleted) {
-        const totalRecordCnt = await db.records
-          .where("animalId")
-          .equals(current.animalId)
-          .count();
-
-        await db.journeys.add({
-          animalId: current.animalId,
-          favoriteGenre: nextFavoriteGenre ?? "Unknown",
-          feedCnt: nextFeedCnt,
-          totalRecordCnt,
-          startedAt: current.startedAt,
-          endedAt: recordDate,
-        });
-      }
 
       const nextCurrent: CurrentAnimal = {
         ...nextCurrentRow,

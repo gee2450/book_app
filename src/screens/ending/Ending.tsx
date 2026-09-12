@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useCurrentAnimal } from "@/entities/animal/data/queries";
+import { useCreateJourney } from "@/features/createJourney";
 import { eunNeun } from "@/shared/lib/koreanJosa";
 
 import { EndingIntro, EndingContent, EndingActionModal } from "./components";
@@ -34,6 +35,7 @@ type EndingPhase =
 export default function EndingScreen() {
   const navigate = useNavigate();
   const { data: currentAnimal } = useCurrentAnimal();
+  const { mutate: createJourney } = useCreateJourney();
 
   const favoriteGenre = currentAnimal?.favoriteGenre ?? "Unknown";
   const animalName = currentAnimal?.name ?? "이 여우";
@@ -52,6 +54,11 @@ export default function EndingScreen() {
 
   const [phase, setPhase] = useState<EndingPhase>("intro1");
   const [showActionModal, setShowActionModal] = useState(false);
+
+  useEffect(() => {
+    if (!currentAnimal?.isCompleted) return;
+    createJourney();
+  }, [currentAnimal?.isCompleted, createJourney]);
 
   useEffect(() => {
     if (phase !== "introPause") return;
