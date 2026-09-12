@@ -127,7 +127,10 @@ const HomeScreen = () => {
   };
 
   return (
-    <DeviceFrame onDevModeClick={() => setDevModeOpen(true)}>
+    <DeviceFrame 
+      {...(import.meta.env.DEV
+        ? { onDevModeClick: () => setDevModeOpen(true) }
+        : {})}>
       <AnimalPanel animal={currentAnimal} />
       <PromptText animal={currentAnimal} />
 
