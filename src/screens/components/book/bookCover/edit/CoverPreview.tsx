@@ -14,18 +14,18 @@ export default function CoverPreview({ image, onClick }: Props) {
     <button
       type="button"
       onClick={onClick}
-      className={[
-        "relative w-21 h-21 rounded-md mx-auto",
-        "flex flex-col items-center justify-center overflow-hidden",
-      ].join(" ")}
+      className="relative mx-auto w-21 h-21"
     >
-      <img
-        src={src}
-        alt="book cover"
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute bottom-0 w-full bg-white/60 text-center text-sm">
-        책 변경하기
+      <div className="relative w-full h-full overflow-hidden rounded-md">
+        <img
+          src={src}
+          alt="book cover"
+          className="block w-full h-full object-cover"
+        />
+
+        <div className="absolute bottom-0 left-0 w-full bg-white/60 text-center text-sm">
+          책 변경하기
+        </div>
       </div>
     </button>
   );
