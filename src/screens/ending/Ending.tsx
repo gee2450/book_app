@@ -1,11 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
 import { useCurrentAnimal } from "@/entities/animal/data/queries";
 import { useCreateJourney } from "@/features/createJourney";
 import { eunNeun } from "@/shared/lib/koreanJosa";
 
-import { EndingIntro, EndingContent, EndingActionModal } from "./components";
+import { EndingIntro, EndingContent } from "./components";
 
 import {
   IMAGE_REVEAL_MS,
@@ -34,7 +32,6 @@ type EndingPhase =
 
 
 export default function EndingScreen() {
-  const navigate = useNavigate();
   const { data: currentAnimal } = useCurrentAnimal();
   const { mutate: createJourney } = useCreateJourney();
 
@@ -54,7 +51,6 @@ export default function EndingScreen() {
   const resultText = `${eunNeun(animalName)} [ ${endingJob} ]가 되었어요`;
 
   const [phase, setPhase] = useState<EndingPhase>("intro1");
-  const [showActionModal, setShowActionModal] = useState(false);
 
   useEffect(() => {
     if (!currentAnimal?.isCompleted) return;
@@ -109,18 +105,6 @@ export default function EndingScreen() {
     }, 0);
   }, []);
 
-  const handleRestart = () => {
-    navigate("/prologue");
-  };
-
-  const handleShowActionModal = () => {
-    setShowActionModal(true);
-  };
-
-  const handleCloseActionModal = () => {
-    setShowActionModal(false);
-  };
-
   if (!currentAnimal) return null;
 
   const showIntroBlack =
@@ -138,15 +122,12 @@ export default function EndingScreen() {
   const showResultBox =
     phase === "resultTyping" || phase === "resultHold" || phase === "showButtons";
 
-  const showButtons = phase === "showButtons";
-
   return (
     <div className="relative h-dvh w-full overflow-hidden bg-black">
       <BlurBackground src={endingImage} visible={showImage} />
 
       <div
         className="relative z-10 h-full w-full flex items-center justify-center cursor-pointer"
-        onClick={handleShowActionModal}
       >
         <EndingContent
           src={endingImage}
@@ -154,7 +135,6 @@ export default function EndingScreen() {
           showResultBox={showResultBox}
           resultText={resultText}
           onResultDone={handleResultDone}
-          showButtons={showButtons}
         />
       </div>
 
@@ -176,7 +156,7 @@ export default function EndingScreen() {
         />
       )}
 
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {showActionModal && (
           <EndingActionModal
             key="action-modal"
@@ -184,7 +164,7 @@ export default function EndingScreen() {
             onClose={handleCloseActionModal}
           />
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
     </div>
   );
 }

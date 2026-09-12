@@ -3,14 +3,15 @@ import { motion } from "framer-motion";
 type Props = {
   onRestart: () => void;
   onClose: () => void;
+  style?: React.CSSProperties;
 };
 
-export default function EndingActionModal({ onRestart, onClose }: Props) {
+export default function EndingActionModal({ onRestart, onClose, style }: Props) {
   return (
     <>
       {/* 오버레이 - 페이드인 */}
       <motion.div
-        className="fixed inset-0 z-40 bg-black/45"
+        className="absolute inset-0 z-40 bg-black/45"
         onClick={onClose}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -20,7 +21,8 @@ export default function EndingActionModal({ onRestart, onClose }: Props) {
 
       {/* 바텀시트 버튼 영역 - 슬라이드업 */}
       <motion.div
-        className="fixed inset-x-0 bottom-0 z-50 px-4 pb-4"
+        className={`absolute inset-x-0 bottom-0 z-50 px-4 pb-4 mx-auto`}
+        style={style}
         initial={{ y: 500 }}
         animate={{ y: 0 }}
         exit={{ y: 500 }}
@@ -30,7 +32,7 @@ export default function EndingActionModal({ onRestart, onClose }: Props) {
           stiffness: 300,
         }}
       >
-        <div className="mx-auto w-full max-w-md overflow-hidden rounded-t-3xl rounded-b-2xl border border-[#C9ACA1] bg-[#F4E3DB] shadow-xl">
+        <div className="mx-auto w-full overflow-hidden rounded-t-3xl rounded-b-2xl border border-[#C9ACA1] bg-[#F4E3DB] shadow-xl">
           {/* 드래그 핸들 */}
           <div className="flex justify-center py-3">
             <div className="h-1.5 w-12 rounded-full bg-[#C9ACA1]" />
