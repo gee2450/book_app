@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useQueryClient } from "@tanstack/react-query";
 
+import { GENRE } from "@/entities/book/model/types";
+
 import {
   HomeMenu,
   PromptText,
@@ -23,6 +25,8 @@ import {
 } from "@/shared/lib/appDate";
 import type { Stage } from "@/entities/animal/model/types";
 import { db } from "@/shared/infra/db/appDb";
+import { calcNextGrowthState } from "@/features/feedAnimal/model/feedAnimal.rules";
+import { calcFavoriteGenre } from "@/features/feedAnimal/model/feedAnimal.helpers";
 
 const HomeScreen = () => {
   const navigate = useNavigate();
@@ -86,7 +90,32 @@ const HomeScreen = () => {
   const handleTestAddFeedCnt = async () => {
     if (!currentAnimal) return;
 
+    const current = await db.current_animal.get("current");
+    if (!current) return;
+
     const newFeedCnt = currentAnimal.feedCnt + 10;
+    
+    const {
+      nextStage,
+      shouldSetFavoriteGenre,
+    } = calcNextGrowthState(current, newFeedCnt);
+
+    let nextFavoriteGenre = current.favoriteGenre;
+
+    if (shouldSetFavoriteGenre) {
+      nextFavoriteGenre =
+        (await calcFavoriteGenre(current.animalId)) ?? GENRE.Unknown;
+    }
+
+    await db.current_animal.update("current", {
+      feedCnt: newFeedCnt,
+      stage: nextStage,
+      favoriteGenre: nextFavoriteGenre ?? null,
+    });
+
+    await qc.invalidateQueries({
+      queryKey: animalKeys.current(),
+    });
 
     await db.current_animal.update("current", {
       feedCnt: newFeedCnt,

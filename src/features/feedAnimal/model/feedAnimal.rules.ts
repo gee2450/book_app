@@ -1,7 +1,7 @@
 import type { CurrentAnimalRow } from "@/shared/infra/db/appDb";
 import { isTodayOrYesterday } from "@/shared/lib/date";
 
-export function calcNextStage(
+function calcNextStage(
   feedCnt: number,
   currentStage: CurrentAnimalRow["stage"]
 ): CurrentAnimalRow["stage"] {
@@ -12,8 +12,23 @@ export function calcNextStage(
   return currentStage;
 }
 
-export function checkIsCompleted(feedCnt: number): boolean {
+function checkIsCompleted(feedCnt: number): boolean {
   return feedCnt >= 100;
+}
+
+export function calcNextGrowthState(
+  current: CurrentAnimalRow,
+  nextFeedCnt: number
+) {
+  const nextStage = calcNextStage(nextFeedCnt, current.stage);
+  const isCompleted = checkIsCompleted(nextFeedCnt);
+
+  return {
+    nextStage,
+    isCompleted,
+    shouldSetFavoriteGenre:
+      current.stage !== 4 && nextStage === 4,
+  };
 }
 
 export function calcNextStreakStartedAt(

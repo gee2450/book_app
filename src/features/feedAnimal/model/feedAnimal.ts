@@ -1,3 +1,4 @@
+import { GENRE } from '@/entities/book/model/types';
 import { db, type CurrentAnimalRow } from "@/shared/infra/db/appDb";
 import type { CurrentAnimal } from "@/entities/animal/model/types";
 
@@ -11,7 +12,7 @@ import {
   calcFavoriteGenre,
 } from "./feedAnimal.helpers";
 import type { FeedAnimalInput, FeedAnimalResult } from "./feedAnimal.types";
-import { calcNextStage, calcNextStreakStartedAt, checkIsCompleted, isSameDay } from "./feedAnimal.rules";
+import { calcNextGrowthState, calcNextStreakStartedAt, isSameDay } from "./feedAnimal.rules";
 import { nowIso } from "@/shared/lib/appDate";
 
 
@@ -60,12 +61,16 @@ export async function feedAnimal(
         ? current.feedCnt ?? 0
         : (current.feedCnt ?? 0) + 1;
       
-      const nextStage = calcNextStage(nextFeedCnt, current.stage);
-      const isCompleted = checkIsCompleted(nextFeedCnt);
+      const {
+        nextStage,
+        isCompleted,
+        shouldSetFavoriteGenre,
+      } = calcNextGrowthState(current, nextFeedCnt);
 
       let nextFavoriteGenre = current.favoriteGenre;
-      if (current.stage !== 4 && nextStage === 4) {
-        nextFavoriteGenre = await calcFavoriteGenre(current.animalId);
+
+      if (shouldSetFavoriteGenre) {
+        nextFavoriteGenre = await calcFavoriteGenre(current.animalId) ?? GENRE.Unknown;
       }
 
       const nextStreakStartedAt = calcNextStreakStartedAt(current, recordDate);
