@@ -2,7 +2,7 @@ import type { EmotionId } from "@/entities/emotion/model/types";
 import { db, type BookRow, type RecordRow } from "@/shared/infra/db/appDb";
 import type { RecordListItemModel } from "@/entities/record/model/types";
 import type { AnimalInfo } from "@/entities/animal/model/types";
-import type { BookInfo } from "@/entities/book/model";
+import { GENRE, type BookInfo } from "@/entities/book/model";
 import type { RecordListPage } from "../model/paging";
 import { getAppNow } from "@/shared/lib/appDate";
 
@@ -148,7 +148,7 @@ export async function fetchRecordListPage(params: {
         bookInfo: book as BookInfo,
         animalInfo: animal as AnimalInfo,
 
-        genreSnapshot: r.genreSnapshot ?? "Unknown",
+        genreSnapshot: r.genreSnapshot ?? GENRE.Unknown,
         stageSnapshot: r.stage ?? 1,
 
         date: r.date,

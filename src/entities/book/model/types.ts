@@ -1,10 +1,13 @@
-export type Genre =
-  | 'Literature'         // 문학
-  | 'HumanitiesSocial'   // 인문·사회
-  | 'ScienceTechnology'  // 과학·기술
-  | 'ArtEssay'           // 예술·에세이
-  | 'PracticalSelfHelp'  // 실용·자기관리
-  | 'Unknown';           // 잘 모르겠어요
+export const GENRE = {
+  Literature: "Literature",
+  HumanitiesSocial: "HumanitiesSocial",
+  ScienceTechnology: "ScienceTechnology",
+  ArtEssay: "ArtEssay",
+  PracticalSelfHelp: "PracticalSelfHelp",
+  Unknown: "Unknown",
+} as const;
+
+export type Genre = (typeof GENRE)[keyof typeof GENRE];
 
 
 /**

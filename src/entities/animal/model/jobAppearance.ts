@@ -6,7 +6,7 @@ import researcherFoxUrl from "@/assets/images/animals/fox/stage5/ScienceTechnolo
 import artistFoxUrl from "@/assets/images/animals/fox/stage5/ArtEssay/Collection.png";
 import architectFoxUrl from "@/assets/images/animals/fox/stage5/PracticalSelfHelp/Collection.png";
 import travelerFoxUrl from "@/assets/images/animals/fox/stage5/Unknown/Collection.png";
-import type { Genre } from "@/entities/book/model";
+import { GENRE, type Genre } from "@/entities/book/model";
 
 type AnimalJobAppearance = {
   name: string;
@@ -21,32 +21,32 @@ export const ANIMAL_JOB_APPEARANCE: Record<
   fox: {
     Literature: {
       name: "이야기꾼 여우",
-      genre: "Literature",
+      genre: GENRE.Literature,
       imgUrl: storytellerFoxUrl,
     },
     HumanitiesSocial: {
       name: "사서 여우",
-      genre: "HumanitiesSocial",
+      genre: GENRE.HumanitiesSocial,
       imgUrl: librarianFoxUrl,
     },
     ScienceTechnology: {
       name: "연구원 여우",
-      genre: "ScienceTechnology",
+      genre: GENRE.ScienceTechnology,
       imgUrl: researcherFoxUrl,
     },
     ArtEssay: {
       name: "예술가 여우",
-      genre: "ArtEssay",
+      genre: GENRE.ArtEssay,
       imgUrl: artistFoxUrl,
     },
     PracticalSelfHelp: {
       name: "설계자 여우",
-      genre: "PracticalSelfHelp",
+      genre: GENRE.PracticalSelfHelp,
       imgUrl: architectFoxUrl,
     },
     Unknown: {
       name: "책 여행자 여우",
-      genre: "Unknown",
+      genre: GENRE.Unknown,
       imgUrl: travelerFoxUrl,
     },
   },

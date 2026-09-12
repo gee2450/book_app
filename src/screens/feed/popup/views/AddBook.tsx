@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import type { DraftBook, Genre } from "@/entities/book/model/types";
+import { GENRE, type DraftBook, type Genre } from "@/entities/book/model/types";
 import {
   BookAuthorInput,
   BookGenreSelect,
@@ -23,7 +23,7 @@ export default function AddBookView({
 }: Props) {
   const [title, setTitle] = useState(initialDraft?.title ?? "");
   const [author, setAuthor] = useState(initialDraft?.author ?? "");
-  const [genre, setGenre] = useState<Genre>(initialDraft?.genre ?? "Unknown");
+  const [genre, setGenre] = useState<Genre>(initialDraft?.genre ?? GENRE.Unknown);
   const [memo, setMemo] = useState(initialDraft?.memo ?? "");
   const [image, setImage] = useState<Blob | null>(initialDraft?.image ?? null);
 

@@ -4,7 +4,7 @@ import { db } from "@/shared/infra/db/appDb";
 import { recordKeys } from "./keys";
 import type { RecordListItemModel } from "@/entities/record/model/types";
 import type { AnimalInfo } from "@/entities/animal/model/types";
-import type { BookInfo } from "@/entities/book/model";
+import { GENRE, type BookInfo } from "@/entities/book/model";
 import type { EmotionId } from "@/entities/emotion/model/types";
 
 
@@ -47,7 +47,7 @@ export function useRecordDetail(recordId?: string) {
         id: r.id,
         bookInfo: b as unknown as BookInfo,
         animalInfo: a as unknown as AnimalInfo,
-        genreSnapshot: r.genreSnapshot ?? "Unknown",
+        genreSnapshot: r.genreSnapshot ?? GENRE.Unknown,
         stageSnapshot: r.stage ?? 1,
         date: r.date,
         memo: r.memo ?? undefined,

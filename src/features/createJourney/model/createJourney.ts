@@ -3,6 +3,7 @@ import type { JourneyRow } from "@/shared/infra/db/appDb";
 import type { CurrentAnimal } from "@/entities/animal/model/types";
 import type { CreateJourneyResult } from "./createJourney.types";
 import { nowIso } from "@/shared/lib/appDate";
+import { GENRE } from "@/entities/book/model/types";
 
 function toResult(
   journeyRow: JourneyRow,
@@ -27,7 +28,7 @@ function toResult(
 export async function createJourney(
   currentAnimal: CurrentAnimal,
 ): Promise<CreateJourneyResult> {
-  const favoriteGenre = currentAnimal.favoriteGenre ?? "Unknown";
+  const favoriteGenre = currentAnimal.favoriteGenre ?? GENRE.Unknown;
 
   return db.transaction("rw", db.journeys, db.records, async () => {
     const existing = await db.journeys.get(currentAnimal.id);

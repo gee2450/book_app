@@ -1,4 +1,4 @@
-import type { Genre } from "@/entities/book/model";
+import { GENRE, type Genre } from "@/entities/book/model";
 
 type GenreOption = {
   value: Genre;
@@ -6,12 +6,12 @@ type GenreOption = {
 };
 
 const GENRE_OPTIONS: GenreOption[] = [
-  { value: "Literature", label: "문학" },
-  { value: "HumanitiesSocial", label: "인문·사회" },
-  { value: "ScienceTechnology", label: "과학·기술" },
-  { value: "ArtEssay", label: "예술·에세이" },
-  { value: "PracticalSelfHelp", label: "실용·자기관리" },
-  { value: "Unknown", label: "잘 모르겠어요" },
+  { value: GENRE.Literature, label: "문학" },
+  { value: GENRE.HumanitiesSocial, label: "인문·사회" },
+  { value: GENRE.ScienceTechnology, label: "과학·기술" },
+  { value: GENRE.ArtEssay, label: "예술·에세이" },
+  { value: GENRE.PracticalSelfHelp, label: "실용·자기관리" },
+  { value: GENRE.Unknown, label: "잘 모르겠어요" },
 ];
 
 export default function GenreSelect({

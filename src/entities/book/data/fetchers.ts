@@ -1,5 +1,5 @@
 import { db, type BookRow } from "@/shared/infra/db/appDb";
-import type { BookDetailInfo } from "@/entities/book/model/types";
+import { GENRE, type BookDetailInfo } from "@/entities/book/model/types";
 import type { BookListPage } from "../model/paging";
 
 export async function fetchBookListPage(params: {
@@ -41,7 +41,7 @@ export async function fetchBookListPage(params: {
     const items: BookDetailInfo[] = pagedRows.map((b) => ({
       id: b.id,
       title: b.title,
-      genre: b.genre ?? "Unknown",
+      genre: b.genre ?? GENRE.Unknown,
       author: b.author ?? null,
       image: b.img ?? null,
       memo: b.memo ?? null,
@@ -91,7 +91,7 @@ export async function fetchBookListPage(params: {
   const items: BookDetailInfo[] = bookRows.map((b) => ({
     id: b.id,
     title: b.title,
-    genre: b.genre,
+    genre: b.genre ?? GENRE.Unknown,
     author: b.author ?? undefined,
     image: b.img ?? null,
     memo: b.memo ?? null,

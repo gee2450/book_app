@@ -1,4 +1,4 @@
-import type { BookInfo } from "@/entities/book/model/types";
+import { GENRE, type BookInfo } from "@/entities/book/model/types";
 import { ReadBookCover } from "@/screens/components";
 
 
@@ -23,7 +23,7 @@ export default function ReadView({
             {book.title || "제목 없음"}
           </div>
           <div className="text-[13px] font-semibold text-black/55">
-            {book.genre || "Unknown"}
+            {book.genre || GENRE.Unknown}
           </div>
           <div className="text-[14px] font-semibold text-black/60">
             {book.author || "저자 미입력"}

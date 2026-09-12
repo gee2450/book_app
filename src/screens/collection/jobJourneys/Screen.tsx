@@ -5,7 +5,7 @@ import { ANIMAL_JOB_APPEARANCE } from "@/entities/animal/model/jobAppearance";
 import type { AnimalType } from "@/entities/animal/model/types";
 import ListItem from "./components/ListItem";
 import type { JourneySummary } from "@/entities/journey/model/types";
-import type { Genre } from "@/entities/book/model";
+import { GENRE, type Genre } from "@/entities/book/model";
 import { useGenreJourneysList } from "@/entities/journey/data/queries";
 import { ui } from "@/assets/images";
 
@@ -15,7 +15,7 @@ type ScreenLocationState = {
   animal?: AnimalType;
 };
 
-const DEFAULT_GENRE: Genre = "Literature";
+const DEFAULT_GENRE: Genre = GENRE.Literature;
 const DEFAULT_ANIMAL: AnimalType = "fox";
 
 const Screen = () => {

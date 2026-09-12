@@ -21,6 +21,7 @@ import {
   getEndingTitleByGenre,
 } from "./model/ending.mapper";
 import BlurBackground from "./components/BlurBackground";
+import { GENRE } from "@/entities/book/model/types";
 
 type EndingPhase =
   | "intro1"
@@ -37,7 +38,7 @@ export default function EndingScreen() {
   const { data: currentAnimal } = useCurrentAnimal();
   const { mutate: createJourney } = useCreateJourney();
 
-  const favoriteGenre = currentAnimal?.favoriteGenre ?? "Unknown";
+  const favoriteGenre = currentAnimal?.favoriteGenre ?? GENRE.Unknown;
   const animalName = currentAnimal?.name ?? "이 여우";
 
   const endingImage = useMemo(

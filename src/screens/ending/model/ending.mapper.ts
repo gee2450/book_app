@@ -1,4 +1,4 @@
-import type { Genre } from "@/entities/book/model/types";
+import { GENRE, type Genre } from "@/entities/book/model/types";
 
 import ending1 from "@/assets/images/animals/fox/endings/ending1.png";
 import ending2 from "@/assets/images/animals/fox/endings/ending2.png";
@@ -9,17 +9,17 @@ import ending6 from "@/assets/images/animals/fox/endings/ending6.png";
 
 export function getEndingImageByGenre(genre?: Genre | null) {
   switch (genre) {
-  case "Literature":
+  case GENRE.Literature:
     return ending1;
-  case "HumanitiesSocial":
+  case GENRE.HumanitiesSocial:
     return ending2;
-  case "ScienceTechnology":
+  case GENRE.ScienceTechnology:
     return ending3;
-  case "ArtEssay":
+  case GENRE.ArtEssay:
     return ending4;
-  case "PracticalSelfHelp":
+  case GENRE.PracticalSelfHelp:
     return ending5;
-  case "Unknown":
+  case GENRE.Unknown:
   default:
     return ending6;
   }
@@ -27,17 +27,17 @@ export function getEndingImageByGenre(genre?: Genre | null) {
 
 export function getEndingTitleByGenre(genre?: Genre | null) {
   switch (genre) {
-  case "Literature":
+  case GENRE.Literature:
     return "이야기 작가";
-  case "HumanitiesSocial":
+  case GENRE.HumanitiesSocial:
     return "기록 연구가";
-  case "ScienceTechnology":
+  case GENRE.ScienceTechnology:
     return "별 관측가";
-  case "ArtEssay":
+  case GENRE.ArtEssay:
     return "풍경 화가";
-  case "PracticalSelfHelp":
+  case GENRE.PracticalSelfHelp:
     return "시간 설계자";
-  case "Unknown":
+  case GENRE.Unknown:
   default:
     return "여행자";
   }
