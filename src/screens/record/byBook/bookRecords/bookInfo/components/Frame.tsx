@@ -25,7 +25,7 @@ function Frame({ children, className }: Props) {
       <div
         className="absolute w-full inset-0 pointer-events-none"
         style={{
-          backgroundImage: `url(${ui("library.png")})`,
+          backgroundImage: `url(${ui("library.webp")})`,
           backgroundRepeat: "repeat",
           backgroundSize: 'cover',
           backgroundPosition: 'bottom',
@@ -33,7 +33,7 @@ function Frame({ children, className }: Props) {
       />
 
       <NineSliceBox
-        frameUrl={ui("book_box.png")}
+        frameUrl={ui("book_box.webp")}
         slice="95"
         borderWidth="20px"
         imageWidth="40px"

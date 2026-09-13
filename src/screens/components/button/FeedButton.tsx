@@ -22,7 +22,7 @@ function FeedButton({
       contentClassName="gap-2 text-3xl font-bold"
     >
       <img
-        src={ui("fox_icon.png")}
+        src={ui("fox_icon.webp")}
         alt=""
         aria-hidden="true"
         className="h-11 -translate-y-0.5 shrink-0"

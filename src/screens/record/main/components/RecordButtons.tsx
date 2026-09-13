@@ -14,14 +14,14 @@ function RecordButtons({
     <div className="w-full px-6">
       <div className="w-full max-w-105 mx-auto mt-4 flex flex-col gap-1.5">
         <RecordBigButton
-          frameUrl={ui("record_button.png")}
+          frameUrl={ui("record_button.webp")}
           leftIcon={<span className="text-lg">🗓️</span>}
           label="날짜별로 보기"
           onClick={onByDate}
         />
 
         <RecordBigButton
-          frameUrl={ui("record_button.png")}
+          frameUrl={ui("record_button.webp")}
           leftIcon={<span className="text-lg">🦊</span>}
           label="책별로 보기"
           onClick={onByBook}

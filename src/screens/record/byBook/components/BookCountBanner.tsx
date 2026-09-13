@@ -9,7 +9,7 @@ type Props = {
 export default function BookCountBanner({ count }: Props) {
   return (
     <NineSliceBox
-      frameUrl={ui("book_cnt_box.png")}
+      frameUrl={ui("book_cnt_box.webp")}
       slice="50 150 70 150"
       borderWidth="10px"
       imageWidth="20px 65px 20px 65px"

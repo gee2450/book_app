@@ -13,7 +13,7 @@ export default function ReadBookCover({ image, onClick }: { image?: Blob | null,
       ].join(" ")}
       onClick={onClick}
     >
-      <img src={objectUrl || ui('book_default.png')} alt="book cover" className="w-full h-full object-cover" />
+      <img src={objectUrl || ui('book_default.webp')} alt="book cover" className="w-full h-full object-cover" />
     </div>
   );
 }

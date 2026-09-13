@@ -31,7 +31,7 @@ const CollectionScreen = () => {
       <CollectionFrame>
         <div className="w-full flex flex-col items-center gap-2">
           <img
-            src={ui('divider.png')}
+            src={ui('divider.webp')}
             alt="divider"
             className="w-[80%] pointer-events-none"
             style={{ imageRendering: "pixelated" }}

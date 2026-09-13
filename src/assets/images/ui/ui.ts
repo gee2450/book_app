@@ -1,5 +1,5 @@
 const UI = import.meta.glob(
-  "/src/assets/images/ui/*.{png,svg}",
+  "/src/assets/images/ui/*.{png,svg,webp}",
   {
     eager: true,
     import: "default",

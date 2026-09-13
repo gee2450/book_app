@@ -18,14 +18,14 @@ function UnsupportedScreen({
       <div
         className="pointer-events-none absolute inset-0"
         style={{
-          backgroundImage: `url(${ui("paper.png")})`,
+          backgroundImage: `url(${ui("paper.webp")})`,
           backgroundRepeat: "repeat",
           opacity: 0.35,
         }}
       />
 
       <NineSliceBox
-        frameUrl={ui("popup.png")}
+        frameUrl={ui("popup.webp")}
         slice="100 64 100 64"
         borderWidth="14px 20px 30px 20px"
         imageWidth="50px 32px 60px 32px"

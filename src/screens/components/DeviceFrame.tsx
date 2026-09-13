@@ -16,7 +16,7 @@ function HomeFrame({
   return (
     <div className="relative h-full">
       <NineSliceBox
-        frameUrl={ui("home.png")}
+        frameUrl={ui("home.webp")}
         slice="70"
         borderWidth="20px 20px 110px 20px"
         imageWidth="70px"

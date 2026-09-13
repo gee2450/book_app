@@ -57,17 +57,17 @@ function HomeMenu({
   return (
     <nav className="flex justify-around items-center">
       <HomeMenuItem
-        icon={Icon(ui("record_icon.png"))}
+        icon={Icon(ui("record_icon.webp"))}
         label="기록"
         onClick={onRecordClick}
       />
       <HomeMenuItem
-        icon={Icon(ui("collection_icon.png"))}
+        icon={Icon(ui("collection_icon.webp"))}
         label="도감"
         onClick={onCollectionClick}
       />
       <HomeMenuItem
-        icon={Icon(ui("setting_icon.png"))}
+        icon={Icon(ui("setting_icon.webp"))}
         label="설정"
         onClick={onSettingsClick}
       />

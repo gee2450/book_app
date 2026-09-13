@@ -21,7 +21,7 @@ export default function RecordListItem({
       className="w-full text-left active:scale-[0.99]"
     >
       <NineSliceBox
-        frameUrl={ui("record_card.png")}
+        frameUrl={ui("record_card.webp")}
         slice="110 100 150 100"
         borderWidth="15px"
         imageWidth="30px"

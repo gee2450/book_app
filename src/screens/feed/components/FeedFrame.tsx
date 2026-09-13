@@ -25,7 +25,7 @@ function FeedFrame({ children, className }: FeedFrameProps) {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: `url(${ui("paper.png")})`,
+          backgroundImage: `url(${ui("paper.webp")})`,
           backgroundRepeat: "repeat",
           opacity: 0.35,
         }}
@@ -33,7 +33,7 @@ function FeedFrame({ children, className }: FeedFrameProps) {
 
       {/* 🎀 상단 커튼 */}
       <img
-        src={ui("curtain.png")}
+        src={ui("curtain.webp")}
         alt=""
         className="absolute top-0 left-0 w-full pointer-events-none z-10"
         style={{ imageRendering: "pixelated" }}
@@ -41,7 +41,7 @@ function FeedFrame({ children, className }: FeedFrameProps) {
 
       {/* 🧱 하단 장식 */}
       <img
-        src={ui("feed_bottom.png")}
+        src={ui("feed_bottom.webp")}
         alt=""
         className="absolute bottom-0 left-0 w-full pointer-events-none z-10"
         style={{ imageRendering: "pixelated" }}

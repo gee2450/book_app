@@ -31,7 +31,7 @@ function TopBar({
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: `url(${ui("paper.png")})`,
+          backgroundImage: `url(${ui("paper.webp")})`,
           backgroundRepeat: "repeat",
           opacity: 0.35,
         }}

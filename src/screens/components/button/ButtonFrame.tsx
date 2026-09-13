@@ -30,7 +30,7 @@ function ButtonFrame({
         .join(" ")}
     >
       <NineSliceBox
-        frameUrl={ui("button.png")}
+        frameUrl={ui("button.webp")}
         slice="50"
         borderWidth="10px"
         imageWidth="25px"

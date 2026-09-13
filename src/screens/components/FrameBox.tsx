@@ -30,7 +30,7 @@ export default function FrameBox({
       ]
         .filter(Boolean)
         .join(" ")}
-      frameUrl={ui("frame.png")}
+      frameUrl={ui("frame.webp")}
       slice={SLICE}
       borderWidth={BORDER}
       imageWidth={IMAGE_WIDTH}

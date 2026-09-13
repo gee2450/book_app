@@ -13,7 +13,7 @@ function TopBanner({ tab, onChangeTab }: Props) {
   return (
     <div className="relative w-full">
       <img
-        src={ui("record_top.png")}
+        src={ui("record_top.webp")}
         alt="record top"
         className="w-full pointer-events-none select-none mt-18"
         style={{ imageRendering: "pixelated" }}

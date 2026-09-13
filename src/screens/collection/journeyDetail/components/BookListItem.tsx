@@ -16,7 +16,7 @@ const BookListItem = ({ book }: Props) => {
     >
       {/* 책 이미지 */}
       <img
-        src={objectUrl ? objectUrl : ui('open_book.png')}
+        src={objectUrl ? objectUrl : ui('open_book.webp')}
         alt={book.title}
         className="w-10 h-8 object-cover"
       />

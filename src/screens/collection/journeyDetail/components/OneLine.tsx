@@ -11,7 +11,7 @@ type Props = {
 const OneLine: FC<Props> = ({ children, onClick }) => {
   return (
     <NineSliceBox
-      frameUrl={ui('small_box.png')}
+      frameUrl={ui('small_box.webp')}
       slice="90 60 60 110"
       borderWidth="12px 20px 12px 20px"
       imageWidth="50px 30px 40px 60px"

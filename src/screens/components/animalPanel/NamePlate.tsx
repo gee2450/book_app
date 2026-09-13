@@ -9,7 +9,7 @@ type NamePlateProps = {
 function NamePlate({ name }: NamePlateProps) {
   return (
     <NineSliceBox
-      frameUrl={ui('name.png')}
+      frameUrl={ui('name.webp')}
       slice="0 500"
       borderWidth="0 40px"
       imageWidth="0 60px"

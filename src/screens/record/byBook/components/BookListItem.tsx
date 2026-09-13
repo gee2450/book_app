@@ -25,7 +25,7 @@ export default function BookListItem({
       className="w-full text-left active:scale-[0.99]"
     >
       <NineSliceBox
-        frameUrl={ui("record_card.png")}
+        frameUrl={ui("record_card.webp")}
         slice="60 80 110 80"   // ← 가로 확장 중심 (값은 이미지에 맞게 조절)
         borderWidth="14px"
         imageWidth="28px"

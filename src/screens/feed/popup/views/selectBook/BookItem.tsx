@@ -26,7 +26,7 @@ function BookCardFrame({
 }: BookCardFrameProps) {
   return (
     <NineSliceBox
-      frameUrl={selected ? ui("selected_book_card.png") : ui("record_card.png")}
+      frameUrl={selected ? ui("selected_book_card.webp") : ui("record_card.webp")}
       slice={selected ? "30 60 50 60" : "30 60 30 60"}
       borderWidth="15px 20px 15px 20px"
       imageWidth={selected ? "10px 13px 13px 13px" : "10px 20px 5px 20px"}
@@ -59,7 +59,7 @@ export default function BookItem({
         <div className="w-10 h-10 rounded-md grid place-items-center bg-white/20 border border-black/10 font-black text-xl overflow-hidden">
           <img
             alt="book-img"
-            src={src || ui("book_default.png")}
+            src={src || ui("book_default.webp")}
             className="w-full h-full object-cover"
           />
         </div>

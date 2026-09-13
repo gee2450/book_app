@@ -10,7 +10,7 @@ type Props = {
 export default function ImagePanel({ page }: Props) {
 
   return (
-    <CharacterFrame height={260} backgroundUrl={ui("library.png")}>
+    <CharacterFrame height={260} backgroundUrl={ui("library.webp")}>
       <div className="relative w-full h-full flex items-end justify-center">
         {page === 1 ?
           <BookImage

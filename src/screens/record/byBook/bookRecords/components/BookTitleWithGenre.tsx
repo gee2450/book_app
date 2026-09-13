@@ -5,7 +5,7 @@ import { ui } from "@/assets/images/ui/ui"
 function GenreBadge({ text }: { text: string }) {
   return (
     <NineSliceBox
-      frameUrl={ui("genre_box.png")}
+      frameUrl={ui("genre_box.webp")}
       slice="200 300 200 300"
       borderWidth="10px"
       imageWidth="12px 25px 12px 25px"

@@ -11,7 +11,7 @@ export default function BottomBar({
 }: RecordDetailBottomBarProps) {
   return (
     <NineSliceBox
-      frameUrl={ui("record_detail_bottom.png")}
+      frameUrl={ui("record_detail_bottom.webp")}
       slice="20 60 20 70"
       borderWidth="10px 30px 10px 30px"
       imageWidth="10px 30px 10px 30px"

@@ -28,7 +28,7 @@ export default function ListItem({
       className="w-full text-left"
     >
       <NineSliceBox
-        frameUrl={ui('collection_card.png')}
+        frameUrl={ui('collection_card.webp')}
         slice="120 300 120 300"
         borderWidth="5px"
         imageWidth="20px 50px 20px 50px"

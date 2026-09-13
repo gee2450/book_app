@@ -22,7 +22,7 @@ const ListItem: FC<Props> = ({ journey, animalType, genre, index, onClick }) => 
 
   return (
     <NineSliceBox
-      frameUrl={ui("collection_card_big.png")}
+      frameUrl={ui("collection_card_big.webp")}
       slice="90 60 60 110"
       borderWidth="25px 20px 20px 20px"
       imageWidth="50px 30px 40px 60px"

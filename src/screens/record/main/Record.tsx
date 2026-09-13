@@ -24,7 +24,7 @@ export default function RecordScreen() {
         <div className="relative flex-1 w-full overflow-hidden">
           {/* 하단 배경은 전체 화면 기준 absolute */}
           <img
-            src={ui("record_bottom.png")}
+            src={ui("record_bottom.webp")}
             alt="record bottom"
             className="absolute bottom-0 left-0 w-full pointer-events-none select-none"
             style={{ imageRendering: "pixelated" }}

@@ -30,7 +30,7 @@ const Screen = () => {
       <CollectionFrame>
         <div className="min-h-0 w-full flex flex-1 flex-col items-center gap-2 mb-5 overflow-y-scroll">
           <img
-            src={ui('divider.png')}
+            src={ui('divider.webp')}
             alt="divider"
             className="w-[70%] pointer-events-none"
             style={{ imageRendering: "pixelated" }}
@@ -38,9 +38,9 @@ const Screen = () => {
           <div className="flex flex-col w-full items-center">
             <span className="text-lg font-bold">{jobLabel}</span>
             <div className="flex items-center gap-2">
-              <img alt="divider_left" src={ui('divider_half.png')} className="w-10 pointer-events-none" />
+              <img alt="divider_left" src={ui('divider_half.webp')} className="w-10 pointer-events-none" />
               <span>{journey.animalInfo.name}</span>
-              <img alt="divider_right" src={ui('divider_half.png')} className="w-10 pointer-events-none scale-x-[-1]" />
+              <img alt="divider_right" src={ui('divider_half.webp')} className="w-10 pointer-events-none scale-x-[-1]" />
             </div>
             <span>{formatDate(journey.startedAt)} ~ {formatDate(journey.endedAt)}</span>
           </div>
@@ -57,9 +57,9 @@ const Screen = () => {
           />
           <OneLine>먹인 횟수: {journey.totalRecordCnt}</OneLine>
           <div className="flex items-center gap-2">
-            <img alt="divider_left" src={ui('divider_half.png')} className="w-10 pointer-events-none" />  
+            <img alt="divider_left" src={ui('divider_half.webp')} className="w-10 pointer-events-none" />  
             <span>이 여우가 먹은 이야기</span>
-            <img alt="divider_right" src={ui('divider_half.png')} className="w-10 pointer-events-none scale-x-[-1]" />
+            <img alt="divider_right" src={ui('divider_half.webp')} className="w-10 pointer-events-none scale-x-[-1]" />
           </div>
           <BookList className="mb-2">
             {journey.records.map((b) => (

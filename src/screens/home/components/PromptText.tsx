@@ -53,12 +53,12 @@ export default function PromptText({
       <div
         className="absolute inset-0 m-[0.29rem] rounded-md bg-white/40"
         style={{
-          WebkitMaskImage: `url(${ui("inner_mask.png")})`,
+          WebkitMaskImage: `url(${ui("inner_mask.webp")})`,
           WebkitMaskRepeat: "no-repeat",
           WebkitMaskSize: "100% 100%",
           WebkitMaskPosition: "center",
 
-          maskImage: `url(${ui("inner_mask.png")})`,
+          maskImage: `url(${ui("inner_mask.webp")})`,
           maskRepeat: "no-repeat",
           maskSize: "100% 100%",
           maskPosition: "center",

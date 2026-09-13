@@ -5,7 +5,7 @@ export default function BookImage({
 }: {
   className?: string;
 }) {
-  const imageUrl = ui('prologue_book.png')
+  const imageUrl = ui('prologue_book.webp')
   
   return (
     <img

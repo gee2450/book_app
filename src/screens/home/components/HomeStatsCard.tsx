@@ -13,7 +13,7 @@ export default function HomeStatsCard({
   return (
     <div className="flex justify-center">
       <NineSliceBox
-        frameUrl={ui("small_scroll.png")}
+        frameUrl={ui("small_scroll.webp")}
         slice="24 48 24 48"
         borderWidth="12px 40px 14px 40px"
         imageWidth="12px 10px 12px 10px"

@@ -31,7 +31,7 @@ function BookSelectButton({
         .join(" ")}
     >
       <NineSliceBox
-        frameUrl={ui("button1.png")}
+        frameUrl={ui("button1.webp")}
         slice="120" 
         borderWidth="10px"
         imageWidth="30px"

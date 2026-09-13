@@ -15,7 +15,7 @@ export default function Frame({
 }: BookSelectPopupProps) {
   return (
     <NineSliceBox
-      frameUrl={ui("popup.png")}
+      frameUrl={ui("popup.webp")}
       slice="100 64 100 64"
       borderWidth="14px 20px 30px 20px"
       imageWidth="50px 32px 60px 32px"

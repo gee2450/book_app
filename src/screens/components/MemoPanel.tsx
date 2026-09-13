@@ -51,7 +51,7 @@ function MemoPanel({
 
   return (
     <NineSliceBox
-      frameUrl={ui('memo.png')}
+      frameUrl={ui('memo.webp')}
       slice="200 130 130 130"
       borderWidth="10px"
       imageWidth="60px 30px 30px 30px"
@@ -63,7 +63,7 @@ function MemoPanel({
     >
       {/* 🐾 발자국 — 맨 아래 */}
       <img
-        src={ui('footprint.png')}
+        src={ui('footprint.webp')}
         alt="footprint"
         className="pointer-events-none select-none absolute right-1 bottom-1 w-20 opacity-70 z-0"
       />
@@ -110,7 +110,7 @@ function MemoPanel({
 
       {/* 🖋️ 잉크 — 맨 위 */}
       <img
-        src={ui('ink.png')}
+        src={ui('ink.webp')}
         alt="ink"
         className="pointer-events-none select-none absolute -right-2 -bottom-5 w-18 z-20"
       />

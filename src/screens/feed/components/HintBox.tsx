@@ -10,7 +10,7 @@ function HintBox({ className }: HintBoxProps) {
   return (
     <div className="w-full px-3">
       <NineSliceBox
-        frameUrl={ui("hintbox.png")}
+        frameUrl={ui("hintbox.webp")}
         slice="200 150 200 150"
         borderWidth="10px"
         imageWidth="35px 30px 35px 30px"

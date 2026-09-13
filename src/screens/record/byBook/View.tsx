@@ -46,7 +46,7 @@ export default function View({
               renderItem={(it) => (
                 <BookListItem
                   item={it}
-                  fallbackCoverUrl={ui("book_default.png")}
+                  fallbackCoverUrl={ui("book_default.webp")}
                   onClick={() => onItemClick(it)}
                 />
               )}

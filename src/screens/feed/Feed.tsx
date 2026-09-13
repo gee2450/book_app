@@ -102,7 +102,7 @@ const FeedScreen = () => {
                 <BookSelectButton onClick={() => setOpen(true)} />
               )}
 
-              <img src={ui("divider_simple.png")} alt="divider" className="w-full" />
+              <img src={ui("divider_simple.webp")} alt="divider" className="w-full" />
 
               <div className="text-center">이야기를 먹고 든 생각은?</div>
               <EmotionPicker value={emotion} onChange={setEmotion} />
