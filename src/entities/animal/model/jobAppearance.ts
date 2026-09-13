@@ -14,6 +14,7 @@ type AnimalJobAppearance = {
   imgUrl: string;
 };
 
+// TODO: ending.mapper.ts와 중복됨. 추후 통합하기
 export const ANIMAL_JOB_APPEARANCE: Record<
   AnimalType,
   Record<Genre, AnimalJobAppearance>
@@ -30,7 +31,7 @@ export const ANIMAL_JOB_APPEARANCE: Record<
       imgUrl: librarianFoxUrl,
     },
     ScienceTechnology: {
-      name: "연구원 여우",
+      name: "별 관측가 여우",
       genre: GENRE.ScienceTechnology,
       imgUrl: researcherFoxUrl,
     },
@@ -40,7 +41,7 @@ export const ANIMAL_JOB_APPEARANCE: Record<
       imgUrl: artistFoxUrl,
     },
     PracticalSelfHelp: {
-      name: "설계자 여우",
+      name: "시간 설계자 여우",
       genre: GENRE.PracticalSelfHelp,
       imgUrl: architectFoxUrl,
     },

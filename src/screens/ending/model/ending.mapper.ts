@@ -30,11 +30,11 @@ export function getEndingTitleByGenre(genre?: Genre | null) {
   case GENRE.Literature:
     return "이야기 작가";
   case GENRE.HumanitiesSocial:
-    return "기록 연구가";
+    return "사서";
   case GENRE.ScienceTechnology:
     return "별 관측가";
   case GENRE.ArtEssay:
-    return "풍경 화가";
+    return "예술가";
   case GENRE.PracticalSelfHelp:
     return "시간 설계자";
   case GENRE.Unknown:
