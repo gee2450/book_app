@@ -18,10 +18,19 @@
 body {
   margin: 0;
   display: flex;
+  width: 100dvw;
+  height: 100dvh;
   justify-content: center;
+  align-items: center;
+
+  background-color: #F8EAD8;
+  background-image: url("/src/assets/images/paper.png");
+  background-repeat: repeat;
 }
 
 #root {
   width: 100dvw;
   height: 100dvh;
+  max-width: 450px;
+  max-height: 915px;
 }
