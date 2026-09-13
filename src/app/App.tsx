@@ -11,12 +11,12 @@ import {
   RecordDetailScreen,
   BookInfoScreen,
   JobJourneysScreen,
+  EndingScreen,
+  GrowthScreen,
+  PrologueScreen,
 } from "@/screens";
 import { AppProviders } from "./providers";
-import PrologueScreen from "@/screens/prologue/Prologue";
 import StartGate from "./StartGate";
-import EndingScreen from "@/screens/ending/Ending";
-import GrowthScreen from "@/screens/growth/Growth";
 import ScreenSizeGate from "./ScreenSizeGate";
 
 function App() {

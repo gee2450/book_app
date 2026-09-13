@@ -1,5 +1,5 @@
+import UnsupportedScreen from "@/screens/unsupported";
 import { useEffect, useState } from "react";
-import UnsupportedScreen from "@/screens/unsupported/Unsupported";
 
 const MIN_WIDTH = 320;
 const MIN_HEIGHT = 660;
