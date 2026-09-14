@@ -26,7 +26,15 @@ body {
   background-color: #F8EAD8;
   background-image: url("/src/assets/images/paper.webp");
   background-repeat: repeat;
+
+  /* font cafe24 surround air setting(+span) */
+  font-family: "Cafe24SurroundAir", sans-serif;
+  span {
+    position: relative;
+    top: 1px;
+  }
 }
+
 
 #root {
   width: 100dvw;
