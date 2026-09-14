@@ -25,7 +25,7 @@ function FeedButton({
         src={ui("fox_icon.webp")}
         alt=""
         aria-hidden="true"
-        className="h-11 -translate-y-0.5 shrink-0"
+        className="h-10 -translate-y-0.5 shrink-0"
         draggable={false}
       />
       <span className="-translate-y-0.5">{text}</span>

@@ -14,10 +14,10 @@ export default function HomeStatsCard({
     <div className="flex justify-center">
       <NineSliceBox
         frameUrl={ui("small_scroll.webp")}
-        slice="24 48 24 48"
-        borderWidth="12px 40px 14px 40px"
+        slice="60 48 60 48"
+        borderWidth="12px 40px 15px 40px"
         imageWidth="12px 10px 12px 10px"
-        className="h-18 w-full max-w-80 place-content-center"
+        className="w-full place-content-center"
       >
         <div className="flex items-center justify-center px-4 text-center">
           <div className="flex flex-1 items-center justify-center gap-1.5 self-center">

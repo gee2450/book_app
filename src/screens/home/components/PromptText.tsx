@@ -78,12 +78,6 @@ export default function PromptText({
           .join(" ")}
       >
         <span className="relative z-20">{text}</span>
-
-        <div>
-          <span className="relative z-20">
-            오늘의 이야기를 들려줘서 고마워요
-          </span>
-        </div>
       </FrameBox>
     </div>
   );

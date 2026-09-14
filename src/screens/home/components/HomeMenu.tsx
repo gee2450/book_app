@@ -19,14 +19,14 @@ function HomeMenuItem({
       onClick={onClick}
       className={[
         "flex flex-col items-center justify-center",
-        "gap-1",
+        "gap-1", 
         "text-sm",
         "leading-none",
         "cursor-pointer",
       ].join(" ")}
     >
-      <span className="text-2xl">{icon}</span>
-      <span>{label}</span>
+      <span>{icon}</span>
+      <span id="home-menu-label">{label}</span>
     </button>
   );
 }
@@ -35,10 +35,10 @@ function HomeMenuItem({
 const Icon = (file: string) => {
   return (
     <img
+      id='home-menu-icon'
       src={file}
       alt={file}
       draggable={false}
-      style={{ width: 50, height: 40, imageRendering: "pixelated" }}
     />
   )
 }

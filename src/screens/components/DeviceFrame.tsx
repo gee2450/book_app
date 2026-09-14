@@ -16,14 +16,15 @@ function HomeFrame({
   return (
     <div className="relative h-full">
       <NineSliceBox
+        id="home-frame"
         frameUrl={ui("home.webp")}
-        slice="70"
-        borderWidth="20px 20px 110px 20px"
-        imageWidth="70px"
+        slice="70 70 110 70"
+        borderWidth="20px 20px 100px 20px"
+        imageWidth="70px 70px 100px 70px"
         fill
         className={[
           "h-full",
-          "flex flex-col gap-2.5 p-2.5",
+          "flex flex-col p-2.5 pb-0",
           "bg-[#F8EAD8]",
           className,
         ]
@@ -37,24 +38,15 @@ function HomeFrame({
         <button
           type="button"
           onClick={onDevModeClick}
-          className="
-            absolute
-            inset-x-0
-            bottom-0
-            z-10
-            h-27.5
-            flex
-            items-end
-            justify-center
-            pb-13
-            text-sm
-            font-semibold
+          className="absolute inset-x-0 bottom-0 
+            flex z-10 h-23
+            items-center justify-center
+            text-sm font-semibold pb-6
             tracking-wide
             text-[#584036]
             transition-opacity
             hover:opacity-70
-            active:opacity-50
-          "
+            active:opacity-50"
         >
           ✦ DEV MODE ✦
         </button>

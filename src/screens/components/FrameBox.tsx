@@ -3,9 +3,9 @@ import { ui } from "@/assets/images";
 
 import type { ReactNode, CSSProperties } from "react";
 
-const SLICE = "50";
-const BORDER = "12px";
-const IMAGE_WIDTH = "16px 15px 16px 15px";
+const SLICE = "50 50 50 50";
+const BORDER = "10px 12px 10px 12px";
+const IMAGE_WIDTH = "12px 13px 12px 13px";
 
 type Props = {
   children: ReactNode;

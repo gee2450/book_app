@@ -17,15 +17,15 @@ function CharacterFrame({
   backgroundUrl = ui("background.webp"),
   bottomSlot,
 }: CharacterFrameProps) {
-  const SLICE = "64";
-  const BORDER = "24px";
+  const SLICE = "80";
+  const BORDER = "5px";
   const IMAGE_WIDTH = "24px";
 
   return (
     <div
       className={[
-        "min-h-50 max-h-80 flex flex-col items-center mt-2",
-        bottomSlot ? "mb-6" : "mb-1",
+        "min-h-50 flex flex-col items-center mt-2",
+        bottomSlot ? "mb-5" : "mb-1",
         height ? "" : "flex-1",
         className,
       ]
@@ -76,7 +76,7 @@ function CharacterFrame({
 
           {/* bottom slot */}
           {bottomSlot && (
-            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 z-20">
+            <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 z-20">
               {bottomSlot}
             </div>
           )}

@@ -143,7 +143,6 @@ const HomeScreen = () => {
         todayRecordCount={todayRecordCount}
         streak={streak}
       />
-
       <HomeMenu
         onRecordClick={() => navigate("/record")}
         onCollectionClick={() => navigate("/collection")}

@@ -2,7 +2,7 @@ import UnsupportedScreen from "@/screens/unsupported";
 import { useEffect, useState } from "react";
 
 const MIN_WIDTH = 320;
-const MIN_HEIGHT = 660;
+const MIN_HEIGHT = 568;
 
 function getScreenStatus() {
   return {
