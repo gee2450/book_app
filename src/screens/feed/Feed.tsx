@@ -109,7 +109,6 @@ const FeedScreen = () => {
 
               <MemoPanel
                 title="메모하기"
-                placeholder="생각나는 대로 적어보세요."
                 value={memo}
                 onChange={setMemo}
               />

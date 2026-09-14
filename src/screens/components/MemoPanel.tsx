@@ -24,7 +24,7 @@ type MemoPanelProps = {
 
 function MemoPanel({
   title = "기록 남기기",
-  placeholder = "오늘 인상 깊었던 문장이나\n생각을 적어요 좋아요.",
+  placeholder = "무슨 이야기든 좋아요.\n오늘의 생각을 남겨보세요.",
   value = "",
   onChange,
   className,
