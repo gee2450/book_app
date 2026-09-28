@@ -1,73 +1,32 @@
-# React + TypeScript + Vite
+# 여우비
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> 책을 기록하면 여우가 성장합니다 
 
-Currently, two official plugins are available:
+여우비는 독서 기록에 따라 캐릭터가 성장하는 **다마고치 형태의 감성적 독서 관리 모바일 웹 서비스**입니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+완독이나 많은 독서량에 집중하기보다, 책을 읽으며 떠오른 생각과 인상 깊었던 문장을 부담 없이 기록하고 꾸준히 이어가는 경험에 집중했습니다.
 
-## React Compiler
+## 바로 사용해보기
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **[여우비 서비스](https://book-fox.vercel.app)** — 실제 서비스 버전
+* **[개발자 버전](https://book-fox-dev.vercel.app)** — 테스트를 위해 날짜를 직접 다음 날로 이동할 수 있는 버전
 
-## Expanding the ESLint configuration
+##  기술 스택
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* React, TypeScript, TanStack Query, Zustand, Tailwind CSS
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+##  주요 기능
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+![dev mode](docs/images/image1.png)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+* **개발자 버전** — 메인 화면의 Dev Mode 버튼을 통해 날짜를 직접 변경하여 다음 날의 기록과 캐릭터 성장을 테스트할 수 있습니다.
+* **배포 버전** — 실제 사용 환경에 맞춰 현재 날짜를 기준으로 독서 기록을 작성하고 캐릭터를 성장시킬 수 있습니다.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+![feed screen](docs/images/image2.png)
+* **캐릭터 성장** - 책을 기록할 때마다 캐릭터에게 먹이를 주며, 독서 기록의 개수와 종류에 따라 캐릭터가 다양한 직업으로 성장합니다.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+![record list](docs/images/image3.png)
+* **독서 기록** — 메인 화면의 먹이주기를 통해 읽은 책을 기록하고, 기록한 책은 독서 기록 화면에서 다시 확인할 수 있습니다.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+![collection](docs/images/image4.png)
+* **캐릭터 도감** — 성장 과정에서 해금된 다양한 직업과 성장을 완료한 캐릭터를 도감에서 확인할 수 있습니다.
